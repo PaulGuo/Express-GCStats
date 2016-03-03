@@ -1,7 +1,7 @@
 'use strict';
 
 var Falcon = require('open-falcon').init('http://127.0.0.1:1988/v1/push');
-var falcon = new Falcon();
+var falcon = new Falcon().tag('type', 'gcstats');
 var gc = (require('gc-stats'))();
 
 gc.on('stats', function (stats) {
@@ -9,7 +9,6 @@ gc.on('stats', function (stats) {
 
     falcon
         .step(20)
-        .tag('type', 'gcstats')
         .gauge('node.gcstats.gctype', stats.gctype)
         .gauge('node.gcstats.pauseMS', stats.pauseMS)
         .gauge('node.gcstats.before.totalHeapSize', stats.before.totalHeapSize)
