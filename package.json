@@ -1,0 +1,26 @@
+{
+  "name": "express-gcstats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulGuo/Express-GCStats.git"
+  },
+  "author": "Guokai (PaulGuo)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaulGuo/Express-GCStats/issues"
+  },
+  "homepage": "https://github.com/PaulGuo/Express-GCStats#readme",
+  "dependencies": {
+    "gc-stats": "^1.0.0",
+    "open-falcon": "^1.3.4"
+  },
+  "devDependencies": {
+    "eslint-config-hfe": "^2.0.0"
+  }
+}
