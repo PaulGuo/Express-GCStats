@@ -3,9 +3,10 @@
 var Falcon = require('open-falcon').init('http://127.0.0.1:1988/v1/push');
 var falcon = new Falcon().tag('type', 'gcstats');
 var gc = (require('gc-stats'))();
+var debug = require('debug')('express-gcstats');
 
 gc.on('stats', function (stats) {
-    console.log('GC happened', stats);
+    debug('GC happened', stats);
 
     falcon
         .step(20)
